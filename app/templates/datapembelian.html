@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembelian</title>
+</head>
+<body>
+    <h1>Pembelian</h1>
+    <table>
+        <tr>
+            <th>ID Pembelian</th>
+            <th>Nama Karyawan</th>
+            <th>Tanggal Transaksi</th>
+            <th>Nama Supplier</th>
+            <th>Action</th>
+        </tr>
+        {% for item in allpembelianobj %}
+        <tr>
+            <td>{{ item.idpembelian }}</item></td>
+            <td>{{ item.idkaryawan.namakaryawan }}</item></td>
+            <td>{{ item.tanggaltransaksi }}</td>
+            <td>{{ item.namasupplier }}</td>
+            <td>
+                <a href="{% url 'updatepembelian' item.idpembelian %}">
+                    <button>Update</button>
+                </a>
+                <a href="{% url 'deletepembelian' item.idpembelian %}">
+                    <button>Delete</button>
+                </a>
+                <a href="{% url 'createdetailpembelian' item.idpembelian %}">
+                    <button>Order</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{% url 'createpembelian' %}">
+        <button>
+            CREATEDATA PEMBELIAN
+        </button>
+    </a>
+</body>
+</html>
+
+    

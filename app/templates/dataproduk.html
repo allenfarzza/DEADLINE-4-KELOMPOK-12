@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk</title>
+</head>
+<body>
+    <h1>Produk</h1>
+    <table>
+        <tr>
+            <th>Nama Produk</th>
+            <th>Satuan Produk</th>
+            <th>Harga Produk</th>
+            <th>Kategori Produk</th>
+            <th>Action</th>
+        </tr>
+        {% for item in allprodukobj %}
+        <tr>
+            <td>{{ item.namaproduk }}</td>
+            <td>{{ item.satuanproduk }}</td>
+            <td>{{ item.hargaproduk }}</td>
+            <td>{{ item.kategoriproduk }}</td>
+            <td>
+                <a href="{% url 'updateproduk' item.idproduk %}">
+                    <button>Update</button>
+                </a>
+                <a href="{% url 'deleteproduk' item.idproduk %}">
+                    <button>Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{% url 'createproduk' %}">
+        <button>
+            CREATEDATA
+        </button>
+    </a>
+</body>
+</html>
+
+    

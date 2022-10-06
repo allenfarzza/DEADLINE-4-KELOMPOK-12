@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Penjualan</title>
+</head>
+<body>
+    <h1>Update Penjualan</h1>
+    <form action="" method = "post">
+        {% csrf_token%}
+        <table>
+            <tbody>
+                <tr>
+                    <th>Nama Karyawan</th>
+                    <td>
+                        <select name="id_karyawan" id="" class="form-control">
+                            {% for item in allkaryawanobj %}
+                            <option value="{{item.idkaryawan}}">{{item.namakaryawan}}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Tanggal Penjualan</th>
+                    <td>
+                        <input required type="date" value="{{allpenjualanobj.tanggalpenjualan}}" name="tanggaljual">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Nama Pelanggan</th>
+                    <td>
+                        <input required type="text" value="{{allpenjualanobj.namapelanggan}}" name="pelanggan">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit">UPDATE</button>
+    </form>
+</body>
+</html>

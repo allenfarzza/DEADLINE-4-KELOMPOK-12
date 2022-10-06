@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Pembelian</title>
+</head>
+<body>
+    <h1>Create Pembelian</h1>
+    <form action="" method = "post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Nama Karyawan</th>
+                <td>
+                    <select name="id_karyawan" id="" class="form-control">
+                        {% for item in allkaryawanobj %}
+                        <option value="{{item.idkaryawan}}">{{item.namakaryawan}}</option>
+                        {% endfor %}
+                    </select>>
+                </td>
+            </tr>
+            <tr>
+                <th>Tanggal Transaksi</th>
+                <td>
+                    <input type="date" name="tanggal">
+                </td>
+            </tr>
+            <tr>
+                <th>Nama Supplier</th>
+                <td>
+                    <input type="text" name="supplier">
+                </td>
+            </tr>
+            <tr>
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>

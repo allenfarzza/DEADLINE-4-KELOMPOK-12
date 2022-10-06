@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Produk</title>
+</head>
+<body>
+    <h1>Create Produk</h1>
+    <form action="" method = "post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Nama Produk</th>
+                <td>
+                    <input type ="text" name="nama">
+                </td>
+            </tr>
+            <tr>
+                <th>Satuan Produk</th>
+                <td>
+                    <select name="satuan">
+                        <option value="Kilogram">Kilogram</option>
+                        <option value="Gram">Gram</option>
+                        <option value="Liter">Liter</option>
+                        <option value="Mili Liter">Mili Liter</option>
+                        <option value="-">-</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Harga Produk</th>
+                <td>
+                    <input type="number" name="harga">
+                </td>
+            </tr>
+            <tr>
+                <th>Kategori Produk</th>
+                <td>
+                    <select name="kategori">
+                        <option value="Makanan">Makanan</option>
+                        <option value="Minuman">Minuman</option>
+                        <option value="Perawatan">Perawatan</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
